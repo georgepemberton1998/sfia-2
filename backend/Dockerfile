@@ -2,8 +2,11 @@ FROM python:3.7
 
 WORKDIR /app
 
-RUN pip install Flask
+COPY . .
 
-COPY app.py
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python", "app.py"]
+EXPOSE 5001
+
+ENTRYPOINT ["/usr/local/bin/python3", "app.py"]
+

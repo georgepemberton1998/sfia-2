@@ -8,6 +8,8 @@ services:
   backend:
     image: backend
     build: ./backend
+    depends_on:
+      - mysql
   nginx:
     image: nginx:latest
     ports:
@@ -19,3 +21,9 @@ services:
       target: /etc/nginx/nginx.conf
     depends_on:
       - frontend
+  mysql:
+    image: database
+    build: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=database

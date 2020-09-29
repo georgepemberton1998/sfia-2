@@ -1,11 +1,11 @@
-pipeline{
+/* pipeline{
         agent any
         environment {
             app_version = 'v1'
             rollback = 'false'
         }
         stages{
-/*             stage('Build Image'){
+             stage('Build Image'){
                 steps{
                     script{
                         if (env.rollback == 'false'){
@@ -24,16 +24,31 @@ pipeline{
                         }
                     }
                 }
-            } */
+            }
             stage('Deploy App'){
                 steps{
                     sh "docker-compose up -d"
                 }
             }
-            stage('Deploy App'){
-                steps{
-                    sh "docker ps -a && sudo netstat -tulpn"
-                }
+        }
+} */
+
+pipeline {
+    agent any
+        environment {
+            app_version = 'v1'
+            rollback = 'false'
+        }
+    stages {
+        stage('Build') {
+            steps {
+                sh "docker-compose up -d"
             }
         }
+        stage('Test') {
+            steps {
+                sh "docker ps -a && sudo netstat -tulpn"
+            }
+        }
+    }
 }

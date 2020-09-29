@@ -30,5 +30,10 @@ pipeline{
                     sh "docker-compose up -d"
                 }
             }
+            stage('Deploy App'){
+                steps{
+                    sh "docker ps -a && sudo netstat -tulpn"
+                }
+            }
         }
 }

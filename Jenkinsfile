@@ -4,7 +4,7 @@ pipeline{
             app_version = 'v1'
             rollback = 'false'
         }
-        stages{
+       /*  stages{
             stage('Build Image'){
                 steps{
                     script{
@@ -24,7 +24,7 @@ pipeline{
                         }
                     }
                 }
-            }
+            } */
             stage('Deploy App'){
                 steps{
                     sh "docker-compose up -d"

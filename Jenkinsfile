@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "docker ps -a && sudo netstat -tulpn"
+                sh "docker ps -a"
             }
         }
     }

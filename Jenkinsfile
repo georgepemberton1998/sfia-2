@@ -5,11 +5,6 @@ pipeline{
             rollback = 'false'
         }
         stages{
-                    stage('pwd and cd'){
-                        steps{
-                            sh "pwd && cd sfia-2"
-                        }
-                    }
 /*             stage('Build Image'){
                 steps{
                     script{

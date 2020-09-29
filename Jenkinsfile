@@ -4,8 +4,13 @@ pipeline{
             app_version = 'v1'
             rollback = 'false'
         }
-       /*  stages{
-            stage('Build Image'){
+        stages{
+                    stage('pwd and cd'){
+                        steps{
+                            sh "pwd && cd sfia-2"
+                        }
+                    }
+/*             stage('Build Image'){
                 steps{
                     script{
                         if (env.rollback == 'false'){

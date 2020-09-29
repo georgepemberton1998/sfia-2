@@ -9,7 +9,7 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            image = docker.build("/sfia-2")
+                            image = docker.build("georgepemberton1998/sfia-2")
                         }
                     }
                 }

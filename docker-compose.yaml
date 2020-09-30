@@ -1,4 +1,4 @@
-version: "3.5"
+version: "3.7"
 services:
   frontend:
     image: frontend
@@ -12,7 +12,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - MYSQL_DATABASE=database
       - SECRET_KEY=${SECRET_KEY}
-      - DATABASE+URI=mysql+pymysql://root:password@mysql:3306/users
+      - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users
     depends_on:
       - mysql
   nginx:

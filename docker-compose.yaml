@@ -9,8 +9,6 @@ services:
     image: backend:latest
     build: ./backend
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-      - MYSQL_DATABASE=database
       - SECRET_KEY=${SECRET_KEY}
       - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users
     depends_on:

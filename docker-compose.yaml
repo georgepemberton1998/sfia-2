@@ -14,17 +14,17 @@ services:
     depends_on:
       - mysql
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
     ports:
       - target: 80
         published: 80
+        protocol: tcp
     volumes:
       - type: bind
         source: ./nginx/nginx.conf
         target: /etc/nginx/nginx.conf
     depends_on:
       - frontend
-
   mysql:
     image: database:latest
     build: ./database

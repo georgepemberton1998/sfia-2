@@ -44,7 +44,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-                sh "pwd && docker-compose up -d"
+                sh "echo ${DB_PASSWORD}&& echo ${SECRET_KEY} && docker-compose up -d"
             }
         }
         stage('Test') {

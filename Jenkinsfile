@@ -49,7 +49,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "docker ps -a"
+                sh "docker ps -a && cat Jenkinsfile"
             }
         }
     }

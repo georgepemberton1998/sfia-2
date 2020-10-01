@@ -33,14 +33,14 @@
         }
 } */
 
-pipeline {
+pipeline{
     agent any
-        environment {
-            app_version = 'v1'
-            rollback = 'false'
-            DB_PASSWORD = '${DB_PASSWORD}'
-            SECRET_KEY = '${SECRET_KEY}'
-        }
+    environment {
+        app_version = 'v1'
+        rollback = 'false'
+        DB_PASSWORD = '${DB_PASSWORD}'
+        SECRET_KEY = '${SECRET_KEY}'
+    }
     stages {
         stage('Build') {
             steps {

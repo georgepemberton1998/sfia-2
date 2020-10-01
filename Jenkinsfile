@@ -38,8 +38,8 @@ pipeline {
         environment {
             app_version = 'v1'
             rollback = 'false'
-            DB_PASSWORD = 'notthispassword'
-            SECRET_KEY = 'notthissecretkey'
+            DB_PASSWORD = '${DB_PASSWORD}'//'notthispassword'
+            SECRET_KEY = '${SECRET_KEY}'
         }
     stages {
         stage('Build') {

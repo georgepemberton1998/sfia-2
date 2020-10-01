@@ -18,14 +18,15 @@ services:
   nginx:
     image: nginx:latest
     ports:
-    - target: 80
-      published: 80
+      - target: 80
+        published: 80
     volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
     depends_on:
       - frontend
+
   mysql:
     image: database:latest
     build: ./database

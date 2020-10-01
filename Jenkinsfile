@@ -49,7 +49,7 @@ pipeline{
         }
         stage('Test') {
             steps {
-                sh "docker ps -a"
+                sh "echo ${DB_PASSWORD}&& echo ${SECRET_KEY} && docker ps -a"
             }
         }
     }

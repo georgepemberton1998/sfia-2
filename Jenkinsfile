@@ -38,7 +38,7 @@ pipeline {
         environment {
             app_version = 'v1'
             rollback = 'false'
-            DB_PASSWORD = '${DB_PASSWORD}'//'notthispassword'
+            DB_PASSWORD = '${DB_PASSWORD}'
             SECRET_KEY = '${SECRET_KEY}'
         }
     stages {
@@ -49,7 +49,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "docker ps -a && cat Jenkinsfile"
+                sh "docker ps -a"
             }
         }
     }

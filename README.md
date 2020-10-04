@@ -48,7 +48,7 @@ This has given me confidence that my application data is safe from deletion and 
 
 ### Jenkins
 
-### Kubernetees
+### Kubernetes
 
 ### Terraform
 

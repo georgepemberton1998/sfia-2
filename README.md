@@ -1,105 +1,71 @@
-# QAC SFIA2 Project
+# Deployement Project
+Having an application provisioned, this project focuses on the deployement of said application. The application itself is a simple flask application. A web page, backend code written in python & a mysql database. To deploy the application, it was my task to utilise the technologies I have recently learned. Namely: Docker, Docker-Compose, Nginx, Ansible, AWS EC2, AWS RDS, Jenkinns, Kubernetes & Terraform.   
 
-This application is a simple [Flask application](https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application), ready to be deployed, for your SFIA2 project.
+---
+## Contents
+- [Design](#design)
+- [Risk Assessment](#risk-assessment)
+- [Creation](#creation)
+  - [Planning](#planning)
+  - [Version Control](#version-control)
+  - [Docker-Compose](#docker-compose)
+  - [Jenkins](#jenkins)
+  - [Kubernetes](#kubernetes)
+  - [Terraform](#terraform)
+  - [Environments](#environments)
+- [Additional Information & Resources](#additional-information--resources)
 
-The following information should be everything you need to complete the project.
+ ----
 
-## Brief
+## Design
 
-The application must:
+The MVP of this project is to deploy the application in a way such that it is integrated into a Jenkins Pipeline job, which is hosted on an AWS EC2 instance. Jenkins uses this job, working with my version control system (Git, Github) to containerise and build the application using Docker Compose. A Webhook has been implemented so that whenever a push is made to the project repository, the Pipeline job will automatically run. After the application has been built, it is pushed to Dockerhub, where it can be accessed by my live and testing environments. blah blah blah
 
-- Be deployed to a **Virtual Machine for testing**
-- Be deployed in a **managed Kubernetes Cluster for production**
-- Make use of a **managed Database solution**
+## Risk Assessment
+While in reality the risks associated with this project are relatively low, a risk assessment is still neccessary. Below is a collection of the risks I have identified and their corresponding likelihood & impact.
 
-## Application
+<p align="center">
+  <img width="1400" height="500" src="">
+</p>
 
-The application is a Flask application running in **2 micro-services** (*frontend* and *backend*).  
+## Creation
 
-The database directory is available should you: 
-  - want to use a MySQL container for your database at any point, *or*
-  - want to make use of the `Create.sql` file to **set up and pre-populate your database**.
+### Planning
+This project in its very nature required an agile planning strategy. I learned the technologies required as I progressed through the project. This made it impossible for me to  plan the project holistically at the begining. Also, as I learnt the relevant technologies, previous ideas proved too difficult considering the time constraint. Because of this, I used Jira to plan my project, which allowed for easily digestable, agile planning. Below I have included a snapshot of my backlog taken just before I had my application up and running. 
 
-The application works by:
-1. The frontend service making a GET request to the backend service. 
-2. The backend service using a database connection to query the database and return a result.
-3. The frontend service serving up a simple HTML (`index.html`) to display the result.
+<p align="left">
+  <img width="383" height="250" src="">
+</p>
 
-### Database Connection
+### Version Control
+This project uses git as the version control system and Github as the Host. Intellij makes it incredibly easy to maintain an agile github repository with inbuilt functionality allowing commits and pushes to be made with one button. 
 
-The database connection is handled in the `./backend/application/__init__.py` file.
+This has given me confidence that my application data is safe from deletion and made it easy for me to track changes to my code. Also, if I decide to go back to this project at a later date to implement further features I can rest assured that I can continue where I left off. 
 
-A typical Database URI follows the form:
+### Ansible
 
-```
-mysql+pymysql://[db-user]:[db-password]@[db-host]/[db-name]
-```
+### Docker-Compose
 
-An example of this would be:
+### Jenkins
 
-```
-mysql+pymysql://root:password@mysql:3306/orders
-```
+### Kubernetes
 
-### Environment Variables
+### Terraform
 
-The application makes use of **2 environment variables**:
+### Environments
 
-- `DATABASE_URI`: as described above
-- `SECRET_KEY`: any *random string* will work here
+#### Testing Environment
 
-### Running a Flask Application
+#### Live Environement
 
-Typically, to run a Flask application, you would:
 
-1. Install the pip dependencies:
 
-```
-pip install -r requirements.txt
-```
 
-2. Run the application:
 
-```
-python3 app.py
-```
 
-![app-diagram](https://i.imgur.com/wnbDazy.png)
 
-## Testing
 
-Unit Tests have been included for both the frontend and backend services.
+## Additional Information & Resources
 
-To test the backend service, you will need two things:
+Prepared by George Pemberton
 
-1. A database called `testdb`
-2. A `TEST_DATABASE_URI` environment variable, which contains the database connection for the `testdb` database.
-
-You can run the tests using the command:
-
-```
-pytest
-```
-
-To generate a coverage report, you will need to run:
-
-```
-pytest --cov application
-```
-
-## Infrastructure
-
-The **Minimum Viable Product** for this project should at least demonstrate the following infrastructure diagram:
-
-![mvp-diagram](https://i.imgur.com/i5qfOas.png)
-
-**Stretch goals** for this project include:
-
-- Using **Terraform to configure the Kubernetes Cluster** for production 
-- Using **Terraform and Ansible to configure the Test VM**
-
-Completing the stretch goals should yield an infrastructure diagram similar to the following:
-
-![stretch-digram](https://i.imgur.com/Q5zljVl.png)
-
-**Good luck!**

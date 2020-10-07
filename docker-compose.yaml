@@ -10,7 +10,7 @@ services:
     build: ./backend
     environment:
       - SECRET_KEY=${SECRET_KEY}
-      - DATABASE_URI=${DATABASE_URI}mysql+pymysql://root:password@mysql:3306/users #rds instace uri >> mysql endpoint  //root >>admin
+      - DATABASE_URI=${DATABASE_URI}
     depends_on:
       - mysql
   nginx:
@@ -30,3 +30,6 @@ services:
     build: ./database
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+
+
+        #mysql+pymysql://admin:password@live-db.cmv8id6swda3.eu-west-2.rds.amazonaws.com:3306/users

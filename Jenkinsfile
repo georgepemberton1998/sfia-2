@@ -26,6 +26,7 @@ pipeline{
                    cd sfia-2
                    export DB_PASSWORD=$DB_PASSWORD DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY"
                    sudo -E DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY DB_PASSWORD=$DB_PASSWORD docker-compose up -d --build"
+                   docker-compose ps
                    >>EOF
                    '''
                 }

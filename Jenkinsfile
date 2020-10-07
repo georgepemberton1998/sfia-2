@@ -3,8 +3,8 @@ pipeline{
     environment {
         app_version = 'v1'
         rollback = 'false'
-        DB_PASSWORD = '${DB_PASSWORD}'
-        SECRET_KEY = '${SECRET_KEY}'
+/*         DB_PASSWORD = '${DB_PASSWORD}'
+        SECRET_KEY = '${SECRET_KEY}' */
     }
     stages{
        /*  stage('Download Docker and docker-compose') {
@@ -17,9 +17,17 @@ pipeline{
                 '''
             }
         } */
+        stage('credentials'){
+            steps {
+                withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY')]) {
+                // some block
+            }
+            }
+
+        }
         stage('Build') {
             steps {
-                sh "docker-compose up -d"
+                sh "docker-compose up -d --build"
             }
         }
         stage('Test') {

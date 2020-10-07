@@ -22,7 +22,6 @@ pipeline{
                 withCredentials([string(credentialsId: 'DATABASE_URI', variable: 'DATABASE_URI'), string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY')]) {
                 sh '''
                    ssh ubuntu@18.134.7.103 <<EOF
-                   git clone https://github.com/georgepemberton1998/sfia-2.git
                    cd sfia-2
                    export DB_PASSWORD=$DB_PASSWORD DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY"
                    sudo -E DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY DB_PASSWORD=$DB_PASSWORD docker-compose up -d --build"

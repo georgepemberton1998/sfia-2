@@ -19,14 +19,14 @@ pipeline{
         } */
         stage('credentials'){
             steps {
-                withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY')]) {
-                // some block
+                withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'),
+                 string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY')]) {
                 }
             }
         }
         stage('Build') {
             steps {
-                sh "docker-compose up -d --build"
+                sh "sudo -E DATABASE_URI=DATABASE_URI SECRET_KEY=SECRET_KEY DB_PASSWORD=DB_PASSWORD docker-compose up -d --build"
             }
         }
         stage('Test') {

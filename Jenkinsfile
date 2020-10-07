@@ -26,7 +26,7 @@ pipeline{
                    export DB_PASSWORD=$DB_PASSWORD
                    export DATABASE_URI=$DATABASE_URI
                    export SECRET_KEY=$SECRET_KEY
-                   sudo -E DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY DB_PASSWORD=$DB_PASSWORD docker-compose up -d --build"
+                   sudo -E DATABASE_URI=$DATABASE_URI SECRET_KEY=$SECRET_KEY DB_PASSWORD=$DB_PASSWORD docker-compose up -d --build
                    docker-compose ps
                    exit
                    >> EOF

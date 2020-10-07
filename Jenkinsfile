@@ -7,7 +7,7 @@ pipeline{
         SECRET_KEY = '${SECRET_KEY}' */
     }
     stages{
-       /*  stage('Download Docker and docker-compose') {
+         stage('Download Docker and docker-compose') {
             steps {
                 sh '''
                 curl https://get.docker.com | sudo bash
@@ -16,7 +16,7 @@ pipeline{
                 sudo chmod +x /usr/local/bin/docker-compose
                 '''
             }
-        } */
+        }
         stage('credentials'){
             steps {
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY')]) {

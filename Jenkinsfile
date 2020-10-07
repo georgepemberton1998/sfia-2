@@ -21,9 +21,8 @@ pipeline{
             steps {
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY')]) {
                 // some block
+                }
             }
-            }
-
         }
         stage('Build') {
             steps {

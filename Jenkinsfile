@@ -21,7 +21,7 @@ pipeline{
             steps {
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'),
                  string(credentialsId: 'DB_PASSWORD', variable: 'SECRET_KEY'),
-                 string(credentialsId: 'DATABASE_URI', variable: 'DB_PASSWORD']) {
+                 string(credentialsId: 'DATABASE_URI', variable: 'DB_PASSWORD')]) {
                  sh "export DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=${DATABASE_URI} SECRET_KEY=$SECRET_KEY"
                  sh "sudo -E DATABASE_URI=DATABASE_URI SECRET_KEY=SECRET_KEY DB_PASSWORD=DB_PASSWORD docker-compose up -d --build"
                  sh ""

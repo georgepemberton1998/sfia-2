@@ -16,14 +16,10 @@ pipeline{
                 export DATABASE_URI="$DATABASE_URI"
                 cd sfia-2
                 docker-compose up -d --build
+                docker-compose ps
                 exit
                 >> EOF
                 '''
-            }
-        }
-        stage('Test') {
-            steps {
-                sh "docker ps -a"
             }
         }
     }

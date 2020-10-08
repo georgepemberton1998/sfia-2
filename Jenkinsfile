@@ -17,9 +17,9 @@ pipeline{
                 '''
             }
         } */
-        stage('credentials'){
+       /*  stage('credentials'){
             steps {
-                withCredentials([string(credentialsId: 'DATABASE_URI', variable: 'DATABASE_URI'), string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY')]) {
+                withCredentials([iastring(credentialsId: 'DATABASE_URI', variable: 'DATABASE_URI'), string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD'), string(credentlsId: 'SECRET_KEY', variable: 'SECRET_KEY')]) {
                 sh '''
                    ssh ubuntu@18.134.7.103 << EOF
                    cd sfia-2
@@ -32,6 +32,12 @@ pipeline{
                    >> EOF
                    '''
                 }
+            }
+        } */
+        stage('Test') {
+            steps {
+                load "/home/jenkins/.envvars/env_vars.goovy"
+                sh "docker-compose up -d"
             }
         }
         stage('Test') {

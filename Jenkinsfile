@@ -17,6 +17,7 @@ pipeline{
                 cd sfia-2
                 docker-compose up -d --build
                 docker-compose ps
+                docker exec sfia-2_frontend_1 pytest --cov application
                 exit
                 >> EOF
                 '''

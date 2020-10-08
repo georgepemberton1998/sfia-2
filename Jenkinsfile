@@ -7,7 +7,7 @@ pipeline{
     stages {
         stage('run containers') {
             steps {
-                load ".envvars/env_vars.goovy"
+                load "$JENKINS_HOME/.envvars/env_vars.goovy"
                 sh "docker-compose up -d"
             }
         }

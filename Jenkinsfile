@@ -11,11 +11,11 @@ pipeline{
                 sh "docker-compose up -d"
                 sh '''
                 ssh ubuntu@18.134.7.103 << EOF
-                export ${SECRET_KEY}
-                export ${DB_PASSWORD}
-                export ${DATABASE_URI}
+                export SECRET_KEY="$SECRET_KEY"
+                export DB_PASSWORD="$DB_PASSWORD"
+                export DATABASE_URI="$DATABASE_URI"
                 cd sfia-2
-                sudo -E SECRET_KEY=${SECRET_KEY} DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=${DATABASE_URI} docker-compose up -d --build
+                docker-compose up -d --build
                 exit
                 >> EOF
                 '''

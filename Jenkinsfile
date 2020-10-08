@@ -9,12 +9,12 @@ pipeline{
             steps {
                 load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
-                   ssh ubuntu@18.134.7.103 << EOF
-                   cd sfia-2
-                   docker-compose up -d"
-                   exit
-                   >> EOF
-                   '''
+                ssh ubuntu@18.134.7.103 << EOF
+                cd sfia-2
+                docker-compose up -d
+                exit
+                >> EOF
+                '''
             }
         }
         stage('Test') {

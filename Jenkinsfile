@@ -13,9 +13,8 @@ pipeline{
                 ssh ubuntu@18.134.7.103 << EOF
                 export ${SECRET_KEY}
                 export ${DB_PASSWORD}
-                export ${DATABASE_URI}
                 cd sfia-2
-                sudo -E SECRET_KEY=${SECRET_KEY} DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=${DATABASE_URI} docker-compose up -d
+                sudo -E SECRET_KEY=${SECRET_KEY} DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=mysql+pymysql://root:password@database:3306/users docker-compose up -d
                 exit
                 >> EOF
                 '''

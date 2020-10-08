@@ -4,8 +4,8 @@ pipeline{
         app_version = 'v1'
         rollback = 'false'
     }
-    stages{
-        stage('Test') {
+    stages {
+        stage('run containers') {
             steps {
                 load "/home/jenkins/.envvars/env_vars.goovy"
                 sh "docker-compose up -d"

@@ -14,7 +14,7 @@ pipeline{
                 export ${SECRET_KEY}
                 export ${DB_PASSWORD}
                 cd sfia-2
-                sudo -E SECRET_KEY=${SECRET_KEY} DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=mysql+pymysql://root:password@database:3306/users docker-compose up --build
+                sudo -E SECRET_KEY=${SECRET_KEY} DB_PASSWORD=${DB_PASSWORD} DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users docker-compose up --build
                 exit
                 >> EOF
                 '''

@@ -31,6 +31,3 @@ services:
     build: ./database
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-
-
-        #mysql+pymysql://admin:password@live-db.cmv8id6swda3.eu-west-2.rds.amazonaws.com:3306/users

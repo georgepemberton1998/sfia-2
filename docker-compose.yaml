@@ -1,13 +1,13 @@
 version: "3.5"
 services:
   frontend:
-    image: frontend:latest
-    build: ./frontend
+    image: georgepemberton1998/frontend:latest
+    #build: ./frontend
     depends_on:
       - backend
   backend:
-    image: backend:latest
-    build: ./backend
+    image: georgepemberton1998/backend:latest
+    #build: ./backend
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - DATABASE_URI=${DATABASE_URI}
@@ -27,7 +27,7 @@ services:
     depends_on:
       - frontend
   mysql:
-    image: database:latest
-    build: ./database
+    image: georgepemberton1998/database:latest
+    #build: ./database
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}

@@ -8,12 +8,12 @@ pipeline{
         stage('run containers') {
             steps {
                 load "/home/jenkins/.envvars/env-vars.groovy"
-                sh "docker-compose up -d"
                 sh '''
                 ssh ubuntu@18.134.7.103 << EOF
                 export SECRET_KEY="$SECRET_KEY"
                 export DB_PASSWORD="$DB_PASSWORD"
                 export DATABASE_URI="$DATABASE_URI"
+                export TEST_DATABASE_URI="$TEST_DATABASE_URI"
                 cd sfia-2
                 docker-compose up -d --build
                 docker-compose ps

@@ -1,0 +1,5 @@
+[test]
+35.177.122.132
+
+[test:vars]
+ansible_user=jenkins

@@ -64,7 +64,7 @@ Docker & docker-compose are tools used for containerisation. This is an integral
 
 ## Additional Information & Resources
 
-[presentation slides](https://docs.google.com/presentation/d/1wRj3YR49MMrSXnLV5oD6Us0Z-6wxeI92kJhOIwEVWGI/edit?usp=sharing)
+[Presentation slides](https://docs.google.com/presentation/d/1wRj3YR49MMrSXnLV5oD6Us0Z-6wxeI92kJhOIwEVWGI/edit?usp=sharing)
 
 Prepared by George Pemberton
 

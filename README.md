@@ -25,7 +25,7 @@ The MVP of this project is to deploy the application in a way such that it is in
 While in reality the risks associated with this project are relatively low, a risk assessment is still neccessary. Below is a collection of the risks I have identified and their corresponding likelihood & impact.
 
 <p align="center">
-  <img width="1400" height="500" src="">
+  <img width="1400" height="500" src="https://i.imgur.com/cRjVUY7.png">
 </p>
 
 ## Creation

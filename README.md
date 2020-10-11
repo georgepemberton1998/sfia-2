@@ -12,7 +12,6 @@ Having an application provisioned, this project focuses on the deployement of sa
   - [Jenkins](#jenkins)
   - [Kubernetes](#kubernetes)
   - [Terraform](#terraform)
-  - [Environments](#environments)
 - [Additional Information & Resources](#additional-information--resources)
 
  ----

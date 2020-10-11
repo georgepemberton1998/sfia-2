@@ -19,7 +19,7 @@ Having an application provisioned, this project focuses on the deployement of sa
 
 ## Design
 
-The MVP of this project is to deploy the application in a way such that it is integrated into a Jenkins Pipeline job, which is hosted on an AWS EC2 instance. Jenkins uses this job, working with my version control system (Git, Github) to containerise and build the application using Docker Compose. A Webhook has been implemented so that whenever a push is made to the project repository, the Pipeline job will automatically run. After the application has been built, it is pushed to Dockerhub, where it can be accessed by my live and testing environments. blah blah blah
+The MVP of this project is to deploy the application in a way such that it is integrated into a Jenkins Pipeline job, which is hosted on an AWS EC2 instance. Jenkins uses this job, working with the version control system (Git, Github) to containerise and build the application in a testing environment using Docker-Compose . A Webhook has been implemented so that whenever a push is made to the project repository, the Pipeline job will automatically run. After the application has been built, it is pushed to Dockerhub, where it can be accessed by kubernetes to deploy the application to the live environment.
 
 ## Risk Assessment
 While in reality the risks associated with this project are relatively low, a risk assessment is still neccessary. Below is a collection of the risks I have identified and their corresponding likelihood & impact.
@@ -34,7 +34,7 @@ While in reality the risks associated with this project are relatively low, a ri
 This project in its very nature required an agile planning strategy. I learned the technologies required as I progressed through the project. This made it impossible for me to  plan the project holistically at the begining. Also, as I learnt the relevant technologies, previous ideas proved too difficult considering the time constraint. Because of this, I used Jira to plan my project, which allowed for easily digestable, agile planning. Below I have included a snapshot of my backlog taken just before I had my application up and running. 
 
 <p align="left">
-  <img width="383" height="250" src="">
+  <img width="383" height="250" src="https://i.imgur.com/G8y0pGO.png">
 </p>
 
 ### Version Control

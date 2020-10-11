@@ -19,7 +19,10 @@ Having an application provisioned, this project focuses on the deployement of sa
 
 ## Design
 
-The MVP of this project is to deploy the application in a way such that it is integrated into a Jenkins Pipeline job, which is hosted on an AWS EC2 instance. Jenkins uses this job, working with the version control system (Git, Github) to containerise and build the application in a testing environment using Docker-Compose . A Webhook has been implemented so that whenever a push is made to the project repository, the Pipeline job will automatically run. After the application has been built, it is pushed to Dockerhub, where it can be accessed by kubernetes to deploy the application to the live environment.
+The MVP of this project is to deploy the application in a way such that it acheives these three criteria;
+1. **It is deployed on a virtual machine for testin**
+2. **It is deployed in a managed kubernetes cluster for production**
+3. **It makes use of a managed database solution**
 
 ## Risk Assessment
 While in reality the risks associated with this project are relatively low, a risk assessment is still neccessary. Below is a collection of the risks I have identified and their corresponding likelihood & impact.

@@ -19,7 +19,7 @@ Having an application provisioned, this project focuses on the deployement of sa
 ## Design
 
 The MVP of this project is to deploy the application in a way such that it acheives these three criteria;
-1. **It is deployed on a virtual machine for testin**
+1. **It is deployed on a virtual machine for testing**
 2. **It is deployed in a managed kubernetes cluster for production**
 3. **It makes use of a managed database solution**
 

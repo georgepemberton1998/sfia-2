@@ -26,7 +26,7 @@ pipeline{
         }
         stage('Production') {
             steps {
-                load "/home/jenkins/.envvars/env-vars-prod.groovy"
+              //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
                 ssh ubuntu@35.178.127.82 << EOF
                 export SECRET_KEY="$SECRET_KEY"

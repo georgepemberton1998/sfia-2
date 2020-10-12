@@ -3,5 +3,6 @@
 **/**/.coverage
 
 
-/Ansible
-/Terraform
+/ansible
+/terraform
+/kubernetes

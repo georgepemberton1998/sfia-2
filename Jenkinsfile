@@ -5,7 +5,7 @@ pipeline{
         rollback = 'false'
     }
     stages {
-        stage('run containers') {
+        stage('Test') {
             steps {
                 load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
@@ -24,6 +24,21 @@ pipeline{
                 >> EOF
                 '''
             }
+        }
+        stage('Production') {
+            steps {
+                load "/home/jenkins/.envvars/env-vars-prod.groovy"
+                sh '''
+                ssh ubuntu@35.178.127.82 << EOF
+                export SECRET_KEY="$SECRET_KEY"
+                export DB_PASSWORD="$DB_PASSWORD"
+                export DATABASE_URI="$DATABASE_URI"
+                export TEST_DATABASE_URI="$TEST_DATABASE_URI"
+                kubectl apply -f sfia2/kubernetes/
+                >> EOF
+                '''
+            }
+
         }
     }
 }

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: georgepemberton1998/backend:latest
+          ports:
+            - containerPort: 5001
+          env:
+            - name: DATABASE_URI
+              value: "$DATABASE_URI"
+            - name: TEST_DATABASE_URI
+              value: "$TEST_DATABASE_URI"
+            - name: SECRET_KEY
+              value: "$SECRET_KEY"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  labels:
+    service: backend
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+  selector:
+    app: backend

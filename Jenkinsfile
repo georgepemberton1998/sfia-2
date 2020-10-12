@@ -21,7 +21,7 @@ pipeline{
                 docker exec sfia-2_frontend_1 pytest --cov application
                 docker exec sfia-2_backend_1 pytest --cov application
                 exit
-                >> EOF
+                EOF
                 '''
             }
         }
@@ -34,8 +34,8 @@ pipeline{
                 export DB_PASSWORD="$DB_PASSWORD"
                 export DATABASE_URI="$DATABASE_URI"
                 export TEST_DATABASE_URI="$TEST_DATABASE_URI"
-                kubectl apply -f sfia2/kubernetes/
-                >> EOF
+                kubectl apply -f sfia-2/kubernetes/
+                EOF
                 '''
             }
 

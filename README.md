@@ -71,3 +71,8 @@ Docker & docker-compose are tools used for containerisation. This is an integral
 
 Prepared by George Pemberton
 
+If you wish to recreate this build yourself, two further files are required. Envs.groovy on the Jenkins machine, in the file location depicted in the first image. And changes made to the backend.yaml on the master node of the kluster. The configuration of both of these files are shown below but have been blurred for security purposes.
+
+<p align="left">
+  <img width="1400" height="500" src="https://i.imgur.com/GoaERMp.png">
+</p>

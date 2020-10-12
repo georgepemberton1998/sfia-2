@@ -29,6 +29,7 @@ pipeline{
             steps {
                 load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
+                sudo su ubuntu
                 ssh ubuntu@35.178.127.82 << EOF
                 export SECRET_KEY="$SECRET_KEY"
                 export DB_PASSWORD="$DB_PASSWORD"

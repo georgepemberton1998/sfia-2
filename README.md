@@ -5,8 +5,8 @@ Having an application provisioned, this project focuses on the deployement of sa
 ## Contents
 - [Design](#design)
 - [Risk Assessment](#risk-assessment)
+- [Planning](#planning)
 - [Creation](#creation)
-  - [Planning](#planning)
   - [Version Control](#version-control)
   - [Docker-Compose](#docker-compose)
   - [Jenkins](#jenkins)
@@ -30,17 +30,17 @@ While in reality the risks associated with this project are relatively low, a ri
   <img width="1400" height="500" src="https://i.imgur.com/cRjVUY7.png">
 </p>
 
-## Creation
 
-<p align="left">
-  <img width="1400" height="500" src="https://i.imgur.com/fpsAzBX.png">
-</p>
-
-### Planning
+## Planning
 This project in its very nature required an agile planning strategy. I learned the technologies required as I progressed through the project. This made it impossible for me to  plan the project holistically at the begining. Because of this, I used Jira to plan my project, which allowed for easily digestable, agile planning. Below I have included a snapshot of my backlog taken just before I moved onto creating the presentation attached to this project. 
 
 <p align="left">
   <img width="1400" height="500" src="https://i.imgur.com/G8y0pGO.png">
+</p>
+
+## Creation
+<p align="left">
+  <img width="1400" height="500" src="https://i.imgur.com/fpsAzBX.png">
 </p>
 
 ### Version Control

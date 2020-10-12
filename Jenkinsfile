@@ -42,7 +42,7 @@ pipeline{
               //  export SECRET_KEY="$SECRET_KEY"
                 //export DB_PASSWORD="$DB_PASSWORD"
                 //export DATABASE_URI="$DATABASE_URI"
-                //export TEST_DATABASE_URI="$TEST_DATABASE_URI"
+                //export TEST_DATABASE_URI="$TEST_DATABASE_URI
 
 
 

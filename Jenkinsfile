@@ -10,7 +10,6 @@ pipeline{
                 load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
                 ssh ubuntu@18.134.7.103 << EOF
-                git clone https://github.com/georgepemberton1998/sfia-2.git
                 export SECRET_KEY="$SECRET_KEY"
                 export DB_PASSWORD="$DB_PASSWORD"
                 export DATABASE_URI="$DATABASE_URI"

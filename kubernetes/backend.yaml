@@ -20,6 +20,7 @@ spec:
           ports:
             - containerPort: 5001
           env:
+            -
             - name: DATABASE_URI
               value: "$DATABASE_URI"
             - name: TEST_DATABASE_URI

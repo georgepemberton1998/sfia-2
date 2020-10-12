@@ -45,7 +45,7 @@ This project uses git as the version control system and Github as the Host. Inte
 This has given me confidence that my files are safe from deletion and made it easy for me to track changes to my code. Also, if I decide to go back to this project at a later date to implement further features I can rest assured that I can continue where I left off. 
 
 ### Terraform
-Terraform is used to spin up the testing environment. This is, an AWS EC2 instance & an AWS RDS instance. More work could be done to improve this. Currently, it is still required to manually add public keys to be able to ssh into the instance, however this can be overcome through terraform. 
+Terraform is used to spin up the testing environment. This is, an AWS EC2 instance & an AWS RDS instance. More work could be done to improve this. Currently, it is still required to manually add public keys to be able to ssh into the instance, however this can be overcome through terraform and ansible. 
 
 ### Ansible
 This project used ansible to isntall jenkins onto an EC2 instance and print the relevant admin password. The benefit of this is that, should I lose the jenkins EC2 instance, or need to boot the application quickly, I can easily download jenkins on the machine to get started. There are many further improvements I could implement for ansible in this project. Such as, creating the jenkins user in the VM, and configuring a user for jenkins. Ansible could also be used to configure the test & production instances to ensure all  necessary prerequisite sare already installed

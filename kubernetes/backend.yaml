@@ -1,3 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  labels:
+    service: backend
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+  selector:
+    app: backend
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,18 +42,3 @@ spec:
               value: "$TEST_DATABASE_URI"
             - name: SECRET_KEY
               value: "$SECRET_KEY"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend
-  labels:
-    service: backend
-spec:
-  type: ClusterIP
-  ports:
-    - protocol: TCP
-      port: 5001
-      targetPort: 5001
-  selector:
-    app: backend

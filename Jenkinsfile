@@ -28,7 +28,7 @@ pipeline{
             steps {
               //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
-                ssh ubuntu@172-20-34-116 << EOF
+                ssh ubuntu@18.130.190.84 << EOF
                 kubectl delete -f sfia-2/kubernetes/
                 kubectl apply -f sfia-2/kubernetes/
                 >> EOF
